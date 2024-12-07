@@ -1,0 +1,29 @@
+{% extends 'base.html' %}  
+{% block content %}  
+<h2>Product List</h2>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>ID</th>  
+            <th>Name</th>  
+            <th>Cost</th>  
+            <th>Price</th>  
+            <th>Actions</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        {% for product in products %}  
+        <tr>  
+            <td>{{ product['Id'] }}</td>  
+            <td>{{ product['Name'] }}</td>  
+            <td>{{ product['Cost'] }}</td>  
+            <td>{{ product['Price'] }}</td>  
+            <td>  
+                <a href="{{ url_for('edit', id=product['Id']) }}" class="btn btn-warning">Edit</a>  
+                <a href="{{ url_for('delete', id=product['Id']) }}" class="btn btn-danger">Delete</a>  
+            </td>  
+        </tr>  
+        {% endfor %}  
+    </tbody>  
+</table>  
+{% endblock %}

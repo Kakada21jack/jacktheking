@@ -1,0 +1,20 @@
+{% extends 'base.html' %}  
+{% block content %}  
+<h2>Edit Product</h2>  
+<form method="post">  
+    <div class="form-group">  
+        <label for="name">Name:</label>  
+        <input type="text" class="form-control" id="name" name="name" value="{{ product['Name'] }}" required>  
+    </div>  
+    <div class="form-group">  
+        <label for="cost">Cost:</label>  
+        <input type="number" class="form-control" id="cost" name="cost" value="{{ product['Cost'] }}" step="0.01" required>  
+    </div>  
+    <div class="form-group">  
+        <label for="price">Price:</label>  
+        <input type="number" class="form-control" id="price" name="price" value="{{ product['Price'] }}" step="0.01" required>  
+    </div>  
+    <button type="submit" class="btn btn-primary">Update Product</button>  
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>  
+</form>  
+{% endblock %}
