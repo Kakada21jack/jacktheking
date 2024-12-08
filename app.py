@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'    # Replace with your MySQL username
 app.config['MYSQL_PASSWORD'] = '1721'  # Replace with your MySQL password
-app.config['MYSQL_DB'] = 'product_db'
+app.config['MYSQL_DB'] = 'crudproduct_db'
 
 # Function to get a MySQL connection
 def get_db_connection():
